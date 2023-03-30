@@ -8,7 +8,7 @@ RUN chmod +x mvnw
 RUN ./mvnw package
 RUN pwd
 RUN ls -l
-COPY /target/*.jar docker-app.jar
+COPY ./target/*.jar docker-app.jar
 
 FROM openjdk:11
 COPY --from=buildstage /app/docker-app.jar .
