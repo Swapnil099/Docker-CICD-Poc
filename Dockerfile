@@ -6,8 +6,8 @@ COPY pom.xml .
 COPY src src
 RUN chmod +x mvnw
 RUN ./mvnw package
-RUN ls /app
-RUN ls /app/target/
+RUN cd target
+RUN ls -l
 COPY /app/target/*.jar docker-app.jar
 
 FROM openjdk:11
