@@ -9,8 +9,9 @@ RUN ./mvnw package
 RUN pwd
 RUN ls -l
 RUN cd target/
+RUN pwd
 RUN ls -l
-COPY *.jar /app/docker-app.jar
+COPY *.jar docker-app.jar
 #COPY ./target/*.jar docker-app.jar
 
 FROM openjdk:11
