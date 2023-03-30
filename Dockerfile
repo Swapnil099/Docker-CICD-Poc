@@ -4,7 +4,7 @@ COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
-RUN chmod a+rw mvnw
+RUN chmod +x mvnw
 RUN ./mvnw package
 COPY target/*.jar docker-app.jar
 
